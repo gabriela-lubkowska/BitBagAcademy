@@ -34,6 +34,6 @@ final class TimeBasedChannelContext implements ChannelContextInterface
         if ($this->clock->isNight()) {
             return $this->channelRepository->findOneByCode('NIGHT');
         }
-        return $this->channelRepository->findOneBy([]);
+        return  $this->channelRepository->findOneBy([]);
     }
 }

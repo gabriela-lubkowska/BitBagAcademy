@@ -40,3 +40,13 @@ services:
             - '@App\DateTime\ClockInterface'
         tags:
             - { name: sylius.context.channel, priority: 1000}
+
+    App\ShippingCalculator\WeightBasedShippingCalculator:
+        tags:
+          -
+            {
+                name: sylius.shipping_calculator,
+                calculator: 'weight_based',
+                form_type: 'App\Form\Type\WeightBasedShippingCalculatorType',
+                label: 'Weight-based'
+            }
