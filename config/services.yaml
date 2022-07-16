@@ -33,3 +33,10 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+    App\Context\TimeBasedChannelContext:
+        arguments:
+            - '@sylius.repository.channel'
+            - '@App\DateTime\ClockInterface'
+        tags:
+            - { name: sylius.context.channel, priority: 1000}
