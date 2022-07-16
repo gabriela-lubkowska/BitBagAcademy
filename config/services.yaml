@@ -50,3 +50,8 @@ services:
                 form_type: 'App\Form\Type\WeightBasedShippingCalculatorType',
                 label: 'Weight-based'
             }
+    
+    App\Menu\AdminMainMenuListener:
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.main, method: addSupplierMenu }
+                
