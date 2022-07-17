@@ -1,0 +1,7 @@
+sylius_fixtures:
+    suites:
+        online_course:
+            fixtures:
+                supplier:
+                    options:
+                        count: 10
