@@ -11,3 +11,9 @@ winzou_state_machine:
             trust:
                 from: [new]
                 to: trusted
+        callbacks:
+            after:
+                notify:
+                    on: ['trust']
+                    do: ['@App\Notifier\SupplierTrustingNotifierInterface', 'notify']
+                    args: ['object']

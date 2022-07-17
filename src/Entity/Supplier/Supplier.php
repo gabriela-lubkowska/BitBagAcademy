@@ -22,28 +22,28 @@ class Supplier implements SupplierInterface
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(type="string")
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      *
      * @ORM\Column(type="string")
      */
-    private $email;
+    protected $email;
 
     /**
      * @var string
      *
      * @ORM\Column(type="string")
      */
-    private $state = self::STATE_NEW;
+    protected $state = self::STATE_NEW;
 
     public function getId(): ?int
     {
