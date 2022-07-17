@@ -11,6 +11,10 @@ sylius_grid:
                 email:
                     type: string
                     label: sylius.ui.email
+                products:
+                    type: string
+                    label: sylius.ui.products
+                    path: countProducts
                 state:
                     type: twig
                     label: sylius.ui.state
