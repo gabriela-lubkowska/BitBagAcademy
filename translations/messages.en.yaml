@@ -1,4 +1,5 @@
 app:
     ui:
         suppliers: "Suppliers"
+        trust: "Trust"
         

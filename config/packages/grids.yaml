@@ -11,6 +11,11 @@ sylius_grid:
                 email:
                     type: string
                     label: sylius.ui.email
+                state:
+                    type: twig
+                    label: sylius.ui.state
+                    options:
+                        template: "Supplier/Grid/state.html.twig"
             actions:
                 main:
                     create:
@@ -20,4 +25,16 @@ sylius_grid:
                         type: update
                     delete:
                         type: delete
+                    trust:
+                        type: apply_transition
+                        label: app.ui.trust
+                        icon: star
+                        options:
+                            link:
+                                route: app_admin_supplier_trust
+                                parameters:
+                                    id: resource.id
+                            transition: trust
+                            graph: app_supplier
+                            class: yellow
                 

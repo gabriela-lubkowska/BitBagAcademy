@@ -3,4 +3,5 @@ sylius_resource:
         app.supplier:
             classes:
                 model: App\Entity\Supplier\Supplier
+                form: App\Form\Type\SupplierType
                     
