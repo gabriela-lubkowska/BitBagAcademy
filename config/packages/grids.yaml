@@ -41,4 +41,20 @@ sylius_grid:
                             transition: trust
                             graph: app_supplier
                             class: yellow
-                
+        app_admin_color:
+            driver:
+                options:
+                    class: "%app.model.color.class%"
+            fields:
+                name:
+                    type: string
+                    label: sylius.ui.name
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete

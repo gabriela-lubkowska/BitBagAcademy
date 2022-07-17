@@ -4,4 +4,7 @@ sylius_resource:
             classes:
                 model: App\Entity\Supplier\Supplier
                 form: App\Form\Type\SupplierType
-                    
+        app.color:
+            classes:
+                model: App\Entity\ProductColor\ProductColor
+            

@@ -3,4 +3,6 @@ app:
         supplier: "Supplier"
         suppliers: "Suppliers"
         trust: "Trust"
+        color: "Color"
+        colors: "Colors"
         

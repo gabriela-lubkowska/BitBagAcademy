@@ -1,0 +1,17 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Entity\ProductColor;
+
+use Sylius\Component\Resource\Model\ResourceInterface;
+
+interface ProductColorInterface extends ResourceInterface
+{
+    public function getId(): int;
+
+    public function getName(): string;
+
+    public function setName(string $name): void;
+
+}

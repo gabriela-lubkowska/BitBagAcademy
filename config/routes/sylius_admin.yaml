@@ -27,3 +27,13 @@ app_admin_supplier_trust:
                 transition: trust
             redirect: referer
             flash: app.ui.supplier_trusted
+
+app_color:
+    resource: |
+        alias: app.color
+        except: ['show']
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        grid: app_admin_color
+    type: sylius.resource
+    prefix: /admin
