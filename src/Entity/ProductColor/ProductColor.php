@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity\ProductColor;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -28,6 +29,13 @@ class ProductColor implements ProductColorInterface
      */
     protected $name;
 
+    /**
+     * @var Collection
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\Product\Product", mappedBy="color")
+     */
+    protected $products;
+
     public function getId(): int
     {
         return $this->id;
@@ -42,4 +50,10 @@ class ProductColor implements ProductColorInterface
     {
         $this->name = $name;
     }
+
+    public function getProducts(): Collection
+    {
+        return $this->products;
+    }
+
 }
