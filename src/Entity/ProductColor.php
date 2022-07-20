@@ -2,38 +2,19 @@
 
 declare(strict_types=1);
 
-namespace App\Entity\ProductColor;
+namespace App\Entity;
 
 use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity
- * @ORM\Table(name="app_color")
- */
 class ProductColor implements ProductColorInterface
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(type="integer")
-     * @ORM\Id()
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
+    /** @var int */
     protected $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string")
-     */
+    /**  @var string */
     protected $name;
 
-    /**
-     * @var Collection
-     *
-     * @ORM\OneToMany(targetEntity="App\Entity\Product\Product", mappedBy="color")
-     */
+    /** @var Collection */
     protected $products;
 
     public function getId(): int
@@ -55,5 +36,4 @@ class ProductColor implements ProductColorInterface
     {
         return $this->products;
     }
-
 }

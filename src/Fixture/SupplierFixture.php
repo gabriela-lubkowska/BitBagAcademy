@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Fixture;
 
-use App\Entity\Supplier\SupplierInterface;
+use App\Entity\SupplierInterface;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Generator;
 use Sylius\Bundle\FixturesBundle\Fixture\AbstractFixture;

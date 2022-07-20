@@ -7,10 +7,10 @@ services:
     # Default configuration for services in *this* file
     _defaults:
         # Automatically injects dependencies in your services
-        autowire: true
+        autowire: false
 
         # Automatically registers your services as commands, event subscribers, etc.
-        autoconfigure: true
+        autoconfigure: false
 
         # Allows optimizing the container by removing unused services; this also means
         # fetching services directly from the container via $container->get() won't work
@@ -59,7 +59,12 @@ services:
     App\Form\Type\SupplierType:
         arguments:
             - '%app.model.supplier.class%'
+        autowire: true
+        autoconfigure: true
+        public: true
 
     App\Notifier\SupplierTrustingNotifierInterface:
         class: App\Notifier\EmailSupplierTrustingNotifier
         public: true
+        arguments:
+          [ '@sylius.email_sender' ]

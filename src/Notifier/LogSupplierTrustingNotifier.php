@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Notifier;
 
-use App\Entity\Supplier\SupplierInterface;
-use Monolog\Logger;
+use App\Entity\SupplierInterface;
 use Psr\Log\LoggerInterface;
 
 final class LogSupplierTrustingNotifier implements SupplierTrustingNotifierInterface

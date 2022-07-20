@@ -2,55 +2,28 @@
 
 declare(strict_types=1);
 
-namespace App\Entity\Supplier;
+namespace App\Entity;
 
 use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity
- * @ORM\Table(name="app_supplier")
- */
 class Supplier implements SupplierInterface
 {
     public const STATE_NEW = 'new';
     public const STATE_TRUSTED = 'trusted';
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(type="integer")
-     * @ORM\Id()
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
+    /** @var int */
     protected $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string")
-     */
+    /** @var string */
     protected $name;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string")
-     */
+    /** @var string */
     protected $email;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string")
-     */
+    /** @var string */
     protected $state = self::STATE_NEW;
 
-    /**
-     * @var Collection
-     *
-     * @ORM\OneToMany(targetEntity="App\Entity\Product\Product", mappedBy="supplier")
-     */
+    /** @var Collection */
     protected $products;
 
     public function getId(): ?int
@@ -88,9 +61,6 @@ class Supplier implements SupplierInterface
         $this->state = $state;
     }
 
-    /**
-     * @return Collection
-     */
     public function getProducts(): Collection
     {
         return $this->products;
@@ -100,5 +70,4 @@ class Supplier implements SupplierInterface
     {
         return $this->products->count();
     }
-
 }

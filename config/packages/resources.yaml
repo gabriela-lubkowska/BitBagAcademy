@@ -2,9 +2,9 @@ sylius_resource:
     resources:
         app.supplier:
             classes:
-                model: App\Entity\Supplier\Supplier
+                model: App\Entity\Supplier
                 form: App\Form\Type\SupplierType
         app.color:
             classes:
-                model: App\Entity\ProductColor\ProductColor
+                model: App\Entity\ProductColor
             

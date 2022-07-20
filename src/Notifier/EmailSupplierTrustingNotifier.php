@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Notifier;
 
-use App\Entity\Supplier\SupplierInterface;
+use App\Entity\SupplierInterface;
 use Sylius\Component\Mailer\Sender\SenderInterface;
 
 final class EmailSupplierTrustingNotifier implements SupplierTrustingNotifierInterface

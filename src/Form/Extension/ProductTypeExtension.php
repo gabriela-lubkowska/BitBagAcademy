@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace App\Form\Extension;
 
-use App\Entity\ProductColor\ProductColor;
-use App\Entity\Supplier\Supplier;
+use App\Entity\ProductColor;
+use App\Entity\Supplier;
 use Sylius\Bundle\ProductBundle\Form\Type\ProductType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormTypeInterface;
 
-final class ProductTypeExtension extends AbstractTypeExtension
+final class ProductTypeExtension extends AbstractTypeExtension implements FormTypeInterface
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -36,4 +37,13 @@ final class ProductTypeExtension extends AbstractTypeExtension
         return [ProductType::class];
     }
 
+    public function getBlockPrefix(): ?string
+    {
+        return 'Product';
+    }
+
+    public function getParent(): ?string
+    {
+        return ProductType::class;
+    }
 }
